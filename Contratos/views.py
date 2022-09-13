@@ -6,7 +6,7 @@ from Contratos.models import Contratos
 def FormContratos(request):
 
     if request.method=="POST":
-        cont=Contratos(numero=request.POST["numero"],importe=request.POST["importe"],fecha=request.POST["fecha"],cliente=request.POST["cliente"],observacion=request.POST["observacion"])
+        cont=Contratos(titulo=request.POST["titulo"],numero=request.POST["numero"],importe=request.POST["importe"],fecha=request.POST["fecha"],cliente=request.POST["cliente"],observacion=request.POST["observacion"])
         
         cont.save()
 
