@@ -1,9 +1,15 @@
 from django.shortcuts import render, HttpResponse
 from django.contrib import messages
+from Contratos.models import Contratos
 # Create your views here.
 
-def Contratos(request):
-       
+def FormContratos(request):
+
+    if request.method=="POST":
+        cont=Contratos(numero=request.POST["numero"],importe=request.POST["importe"],fecha=request.POST["fecha"],cliente=request.POST["cliente"],observacion=request.POST["observacion"])
+        
+        cont.save()
+
     return render(request, 'contratos/Contratos.html')
 
 
