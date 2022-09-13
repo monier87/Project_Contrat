@@ -57,7 +57,7 @@ ROOT_URLCONF = 'ProyectoContrato.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/amy/Desktop/Project David/proyectoWebapp/template/','C:/Users/amy/Desktop/Project David/Contratos/template/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

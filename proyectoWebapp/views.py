@@ -15,10 +15,7 @@ def Consultar(request):
 def Entidades(request):
         
     return render(request, "proyectoWebapp/Entidades.html")
-
-def Contratos(request):
-            
-    return render(request, "proyectoWebapp/Contratos.html")
+    
 
 def Reportes(request):
         

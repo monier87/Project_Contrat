@@ -1,11 +1,8 @@
-{% extends "proyectoWebapp/base.html" %} 
+{% extends 'proyectoWebapp/base.html' %} 
 
 {% load static %}
 
 {% block content %}
-<html lang="en">  
-
-<body>  
  
 <div class="container">
   <h2>Añadir Contrato</h2>
@@ -44,29 +41,8 @@
       <label for="observacion">Observación:</label>
       <textarea class="form-control" id="observacion" name="observacion"></textarea>
     </div>	
-    <button type="submit" value="Submit" class="btn btn-primary">Añadir factura</button>
+    <input type="submit" value="Añadir factura" class="btn btn-primary">
   </form>
 </div>
-</body>  
-</html> 
-<!--{% for contrato in Contratos %}-->
-
-<!--section class="page-section clearfix">
-    <div class="container">
-      <div class="intro">
-        
-        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-          <h2 class="section-heading mb-4" >
-            <span class="section-heading-lower">{{contrato.titulo}}</span>
-        
-          </h2>
-                   
-        </div>
-      </div>
-    </div>
-  </section-->
-  
-
-{% endfor %}
 
 {% endblock %}
