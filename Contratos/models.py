@@ -13,6 +13,12 @@ class Contratos(models.Model):
     observacion = models.TextField(null=True, blank=True, verbose_name="Observación")
     
     
+    class Meta:
+        verbose_name='contrato'
+        verbose_name_plural='contratos'
+
+    
+    
     
     
     

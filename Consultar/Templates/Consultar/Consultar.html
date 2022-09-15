@@ -1,0 +1,52 @@
+{% extends "proyectoWebapp/base.html" %} 
+
+{% load static %}
+
+{% block content %}
+
+
+<form  action="" method="POST">
+    {% csrf_token %} 
+<div class="card">
+    <div class="card-header">
+        
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Contratos</h4>
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">numero</th>
+                        <th scope="col">titulo</th>
+                        <th scope="col">cliente</th>
+                        <th scope="col">observacion</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for Consultar in consultar %}   
+                    <tr>
+                        <td>{{Consultar.numero}}</td>
+                        <td>{{Consultar.titulo}}</td>
+                        <td>{{Consultar.cliente}}</td>
+                        <td>{{Consultar.observacion}}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{% url 'Contratos' %}" role="button">Editar</a>
+                            |
+                            <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+</div>
+
+</form>  
+ 
+
+{% endblock %}

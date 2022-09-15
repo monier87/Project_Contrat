@@ -8,9 +8,7 @@ def Inicio(request):
         
     return render(request, "proyectoWebapp/Inicio.html")
 
-def Consultar(request):
-        
-    return render(request, "proyectoWebapp/Consultar.html")
+
 
 def Entidades(request):
         
