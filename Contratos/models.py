@@ -16,6 +16,10 @@ class Contratos(models.Model):
     class Meta:
         verbose_name='contrato'
         verbose_name_plural='contratos'
+        
+    def __str__(self):
+        return self.titulo
+
 
     
     
