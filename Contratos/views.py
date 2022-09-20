@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from .forms import consultarForm
-from .models import Contratos
+
 # Create your views here.
 
 def FormContratos(request):

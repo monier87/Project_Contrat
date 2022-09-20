@@ -2,7 +2,8 @@ from multiprocessing import context
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from Contratos.models import Contratos
-from Contratos.views import consultarForm
+from .forms import EditarForm
+
 
 
 def Consultar(request):
@@ -22,15 +23,16 @@ def eliminar(request, contratos_id):
 def editar(request, contratos_id):
     contrato=Contratos.objects.get(id=contratos_id)
     if request.method=="POST":
-        form=consultarForm(request.POST, instance=contrato)
+        form=EditarForm(request.POST, instance=contrato)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Contrato editado correctamente.')
-            return redirect('Contratos')
+            messages.success(request, 'Contrato editado correctamente')
+            return redirect('Consultar')
     else:
-        form= consultarForm(instance=contrato)
+        form= EditarForm(instance=contrato)
     
     context={'form': form}
+    
     return render(request, 'Consultar/editar.html', context)
         
         

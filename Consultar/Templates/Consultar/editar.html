@@ -4,14 +4,13 @@
 {% block content %}
  
 <div class="container">
-  <h2>Editar Contrato</h2>
-</div>
-   
-  <form method="POST" >
-  {% csrf_token %} 
-  {{ form }}
-  <button>Editar Contrato</button>
-
+  <form method="POST" action="">
+    {% csrf_token %} 
+    {{ form }}
+        
+    <button>Editar Contrato</button>
   </form>
+
+</div>
 
 {% endblock %}
