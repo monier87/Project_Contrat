@@ -1,17 +1,22 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
+from .forms import consultarForm
 from .models import Contratos
 # Create your views here.
 
 def FormContratos(request):
 
     if request.method=="POST":
-        cont=Contratos(titulo=request.POST["titulo"],numero=request.POST["numero"],importe=request.POST["importe"],fecha=request.POST["fecha"],cliente=request.POST["cliente"],observacion=request.POST["observacion"])
-        
-        cont.save()
-        messages.success(request, 'Contrato insertado correctamente.')
-
-    return render(request, 'contratos/Contratos.html')
+        form= consultarForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Contrato insertado correctamente.')
+            return redirect('Contratos')
+    else:
+        form= consultarForm()
+    
+    context={'form': form}
+    return render(request, 'contratos/Contratos.html', context)
 
 
 
