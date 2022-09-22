@@ -19,7 +19,6 @@ def eliminar(request, contratos_id):
     return redirect("Consultar")
 
 
-
 def editar(request, contratos_id):
     contrato=Contratos.objects.get(id=contratos_id)
     if request.method=="POST":
