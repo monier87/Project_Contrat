@@ -20,7 +20,7 @@ from django.urls import path, include
 
 
 from django.conf import settings
-from django.conf.urls.static import static
+
 
 urlpatterns = [
 
@@ -28,5 +28,6 @@ urlpatterns = [
     path('', include('proyectoWebapp.urls')),
     path('Contratos/', include('Contratos.urls')),
     path('Consultar/', include('Consultar.urls')),
+    path('autenticacion/', include('autenticacion.urls')),
 ]
 

@@ -7,4 +7,4 @@ class consultarForm(forms.ModelForm):
     
     class Meta:
         model= Contratos
-        fields=["titulo", "numero","importe","fecha","cliente","observacion"]
+        fields=["titulo","numero","importe","fecha","cliente","observacion"]
