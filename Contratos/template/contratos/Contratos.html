@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container">
   <h2>Insertar Contratos</h2>
-
+{% if request.user.is_authenticated %}
 <form method="POST" action="">
   {% csrf_token %} 
   <div class="form-group">
@@ -41,5 +41,11 @@
 </body>  
 </html> 
 </div>
+{% else %}
+
+Debe Autenticarse
+
+{% endif %}
+
 {% endblock %}
 

@@ -7,9 +7,10 @@ from .forms import EditarForm
 
 
 def Consultar(request):
-    contratos=Contratos.objects.all()
-    context= {'contratos':contratos}    
-    return render(request, 'Consultar/Consultar.html', context) 
+        contratos=Contratos.objects.all()
+        context= {'contratos':contratos}    
+               
+        return render(request, 'Consultar/Consultar.html', context)
 
 
 

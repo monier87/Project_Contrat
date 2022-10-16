@@ -4,8 +4,12 @@
 
 {% block content %}
 
+{% csrf_token %}
 <div class="container text-center">
         <h2>Listado de Contratos</h2>
+
+
+{% if request.user.is_authenticated %}
 
 <div class="table-responsive">
         <table class="table table-striped table-dark">
@@ -34,6 +38,11 @@
         </table>
 </div>
 </div>
+{% else %}
+
+Debe Autenticarse
+
+{% endif %}
 
 
 
