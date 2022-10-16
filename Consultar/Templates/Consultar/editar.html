@@ -1,61 +1,42 @@
-{% extends "proyectoWebapp/base.html" %} 
+{% extends "proyectoWebapp/base.html" %}
 
-{% load static %}
 
 {% block content %}
+<div class="container">
+  <h2>Editar Contratos</h2>
 
-{% for Consultar in consultar %}
-
-<div class="card">
-    <div class="card-header">
-        
-    </div>
-    <div class="card-body">
-        <h4 class="card-title">Contratos</h4>
-        <<div class="table-responsive">
-            <table class="table table-primary">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">titulo</th>
-                        <th scope="col">cliente</th>
-                        <th scope="col">observacion</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr class="">
-                        <td scope="row">Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-    </div>
-
-</div>
-{% endfor %}
-    <!--div class="col-md-3">
-
-    <div class="card" style="width: 100%; margin: 5px 5px;">
-
-      
-        <div class="card-body" style="text-align: center;">
-
-            <h7 class="card-title">{{Consultar.titulo}}</h7>
-
-            <p class="card-text">{{Consultar.cliente}}</p>
-
-
-        </div--> 
-        
-        
-    </div><!--card que se cierra-->
-    
+<form method="POST" action="">
+  {% csrf_token %} 
+  <div class="form-group">
+      <label for="titulo">Titulo:</label>
+      <input type="text" class="form-control" id={{form.titulo}}
   </div>
- 
-
+    <div class="form-group">
+      <label for="numero">Número:</label>
+      <input type="text" class="form-control" id={{form.numero}}
+    </div>
+    <div class="form-group">
+      <label for="importe">Importe:</label>
+	  <input class="form-control" type="number" placeholder="" id={{form.importe}}
+	</div>
+    <div class="form-group">
+      <label for="fecha">Fecha:</label>
+      <input type="text" class="form-control" id={{form.fecha}}
+    </div>
+    <div class="form-group">
+      <label for="cliente">Cliente:</label>
+      <input type="text" class="form-control" id={{form.cliente}}
+    <br>
+   
+    <div class="form-group">
+      <label for="observacion">Observación:</label>
+      <textarea class="form-control" id={{form.observacion}}
+    </div>	
+    <button type="submit" value="Submit" class="btn btn-primary">Editar Contratos</button>
+  </form>
+</div>
+</body>  
+</html> 
+</div>
 {% endblock %}
+

@@ -28,29 +28,29 @@
 		<link rel="shortcut icon" type="image/icon" href="static/proyectoWebapp/images/logo/favicon.png"/>
        
         <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="{% static 'static/proyectoWebapp/css/font-awesome.min.css'%}">
+        <link rel="stylesheet" href="static/proyectoWebapp/css/font-awesome.min.css">
 		
 		<!--linear icon css-->
 		<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 		
 		<!--animate.css-->
-        <link rel="stylesheet" href="{% static 'proyectoWebapp/css/animate.css'%}">
+        <link rel="stylesheet" href="static/proyectoWebapp/css/animate.css">
 		
 		<!--hover.css-->
-        <link rel="stylesheet" href="{% static 'proyectoWebapp/css/hover-min.css'%}">
+        <link rel="stylesheet" href="static/proyectoWebapp/css/hover-min.css">
 		
 		<!--vedio player css-->
-        <link rel="stylesheet" href="{% static 'proyectoWebapp/css/magnific-popup.css'%}">
+        <link rel="stylesheet" href="static/proyectoWebapp/css/magnific-popup.css">
 
 		<!--owl.carousel.css-->
-        <link rel="stylesheet" href="{% static 'proyectoWebapp/css/owl.carousel.min.css'%}">
-		<link href="{% static 'proyectoWebapp/css/owl.theme.default.min.css'%" rel="stylesheet"/>
+        <link rel="stylesheet" href="static/proyectoWebapp/css/owl.carousel.min.css">
+		<link href="static/proyectoWebapp/css/owl.theme.default.min.css" rel="stylesheet"/>
 		
         <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="{% static 'static/proyectoWebapp/css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="static/proyectoWebapp/css/bootstrap.min.css">
 		
 		<!-- bootsnav -->
-		<link href="{% static 'static/proyectoWebapp/css/bootsnav.css'%}" rel="stylesheet"/>	
+		<link href="static/proyectoWebapp/css/bootsnav.css" rel="stylesheet"/>	
         
         <!--style.css-->
         <link rel="stylesheet" href="{% static 'proyectoWebapp/css/style.css'%}">
@@ -139,7 +139,7 @@
 											 		<i class="fa fa-close"></i>
 											 	</span>
 											</button>  
-											<h4 class="modal-title" id="myLargeModalLabel">Registrarse</h4> 
+											<h4 class="modal-title" id="form">Registrarse</h4> 
 											<form class="lg-frm" style="padding:25px">
 												<label>Name :</label>
 												<input type="text" class="form-control" placeholder="Enter Name">
@@ -171,6 +171,22 @@
 		</section><!--/.header-->	
 		<!--header end-->
 		
+		<!--/.OJAJAJAJAJAJAJ ABRIR Y Cerrar SESSION-->	
+		<div style="text-align: right; margin-right: 100px; color:black;">
+			
+		{% if user.is_authenticated %}
+
+		Hola {{user.username}} &nbsp;&nbsp;<a href="{% url 'cerrar_session' %}" style="color:black;">Cerrar Sesion</a>
+
+		{% else %}
+		
+		<a href="{% url 'logear' %}" style="color:black;">Login</a> &nbsp; &nbsp; <a href="{% url 'autenticacion' %}" style="color:black;">Registrarse</a>
+
+		{% endif %}
+
+		</div>
+
+
 		<!--menu start-->
 		<section id="menu">
 			<div class="container">
@@ -195,7 +211,7 @@
 							<ul class="nav navbar-nav navbar-right">
 								<li class="{% if request.path == '/' %} active{% endif %}"><a href="{% url 'Inicio' %}">Inicio</a></li>
 								<li class="{% if request.path == '/Consultar' %} active{% endif %}"><a href="{% url 'Consultar' %}">Consultar</a></li>
-								<li class="{% if request.path == '/Contratos' %} active{% endif %}"><a href="{% url 'Contratos' %}">Contratos</a></li>
+								<li class="{% if request.path == '/Contratos' %} active{% endif %}"><a href="{% url 'Contratos' %}">Insertar Contratos</a></li>
 								<li class="{% if request.path == '/Entidades' %} active{% endif %}"><a href="{% url 'Entidades' %}">Entidades</a></li>
 								<li class="{% if request.path == '/Reportes' %} active{% endif %}"><a href="{% url 'Reportes' %}">Reportes</a></li>
 								<li class="{% if request.path == '/Clasificadores' %} active{% endif %}"><a href="{% url 'Clasificadores' %}">Clasificadores</a></li>
@@ -227,7 +243,7 @@
 		<section class="about-part project-part">
 			<div class="container">
 				<div class="about-part-details text-center"> 
-					<h2>SISCOM</h2>
+					<h2>COMERCIAL</h2>
 					<div class="about-part-content">
 						<div class="breadcrumbs">
 							<div class="container">
