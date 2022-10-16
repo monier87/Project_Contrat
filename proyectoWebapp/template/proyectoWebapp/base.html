@@ -171,6 +171,22 @@
 		</section><!--/.header-->	
 		<!--header end-->
 		
+		<!--/.OJAJAJAJAJAJAJ ABRIR Y Cerrar SESSION-->	
+		<div style="text-align: right; margin-right: 100px; color:black;">
+			
+		{% if user.is_authenticated %}
+
+		Hola {{user.username}} &nbsp;&nbsp;<a href="{% url 'cerrar_session' %}" style="color:black;">Cerrar Sesion</a>
+
+		{% else %}
+		
+		<a href="{% url 'logear' %}" style="color:black;">Login</a> &nbsp; &nbsp; <a href="{% url 'autenticacion' %}" style="color:black;">Registrarse</a>
+
+		{% endif %}
+
+		</div>
+
+
 		<!--menu start-->
 		<section id="menu">
 			<div class="container">
