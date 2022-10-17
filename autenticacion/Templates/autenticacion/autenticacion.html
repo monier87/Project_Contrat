@@ -6,14 +6,26 @@
 
 {% block content %}
 
-
-<form method="POST" action="" style="color: black;">
-    {% csrf_token %} 
-    <div style="width: 35%; margin: auto;">
-    {{form|crispy}}
-    <button type="submit" value="Submit" class="btn btn-success">Crear Usuarios</button>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">
+                         <i class="fa fa-close"></i>
+                     </span>
+                </button>  
+                <h4 class="modal-title" id="form">Registrarse</h4>
+                <form method="POST" action="" style="padding:25px">
+                    {% csrf_token %}
+                     
+                    
+                         {{form|crispy}}
+                         <button type="submit" value="Submit" class="btn btn-success">Crear Usuarios</button>
+                    
+                </form>
+            </div>
+        </div>
     </div>
-</form>
 
 
 {% endblock %}

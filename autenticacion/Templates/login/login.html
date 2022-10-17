@@ -6,28 +6,43 @@
 
 {% block content %}
 
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header" method="POST" action="" style="color: black;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        <i class="fa fa-close"></i>
+                    </span>
+                </button>
+                <h4 class="modal-title" id="mySmallModalLabel">
+                    Abrir Session
+                </h4>
+                <form method="POST" action="" style="padding:25px">
+                    {% csrf_token %} 
+                                                     
+                    {% if messages %}
 
-<form method="POST" action="" style="color: black;">
-    {% csrf_token %} 
-    <div style="width: 35%; margin: auto;">
+                    {% for mensaje in messages %}
 
-        {% if messages %}
-
-        {% for mensaje in messages %}
-
-        <span class="alert alert-{{mensaje.tags}}"> {{mensaje}} </span>
+                    <span class="alert alert-{{mensaje.tags}}"> {{mensaje}} </span>
 
         
-        {% endfor %}
+                    {% endfor %}
 
-        {% endif %}
+                    {% endif %}
 
-    </br></br></br>
+                    </br></br></br>
 
-    {{form|crispy}}
-    <button type="submit" value="Submit" class="btn btn-success">Login</button>
+                    {{form|crispy}}
+                    
+                    <button type="submit" value="Submit" class="btn btn-success pull-right">Login</button>
+                </form>
+                
+            </div>
+        </div>
     </div>
-</form>
+
+
 
 
 {% endblock %}
