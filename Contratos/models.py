@@ -28,7 +28,7 @@ class Contratos(models.Model):
     numero = models.CharField(max_length=30, null=False, unique=True, verbose_name="Número")
     importe = models.DecimalField(max_digits=10, decimal_places=2, null=False, verbose_name="Importe")
     fecha = models.DateTimeField(default=datetime.now, null=True, blank=True, verbose_name="Fecha")
-    cliente = models.CharField(max_length=200, null=False, verbose_name="Cliente")
+    #cliente = models.CharField(max_length=200, null=False, verbose_name="Cliente")
     aprobado=models.BooleanField(default=False)
     proveedores= models.ForeignKey(Proveedor, blank=True, null=True, on_delete=models.CASCADE)
     observacion = models.TextField(null=True, blank=True, verbose_name="Observación")
